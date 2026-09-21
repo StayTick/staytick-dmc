@@ -75,19 +75,19 @@ section{padding-block:clamp(4rem,9vw,7.5rem)}
 /* numeración editorial: sólo en los eyebrows de cabecera de sección */
 section > .wrap > .eyebrow,
 section > .wrap > .sec-head > .eyebrow,
-section > .wrap > .grid > div > .eyebrow,
+section > .wrap.grid > div > .eyebrow,
 section > .wrap > .head-row > div > .eyebrow,
 section > .wrap > .card > div > .eyebrow{position:relative;padding-bottom:.9rem;border-bottom:1px solid var(--line);margin-bottom:.4rem}
 section > .wrap > .eyebrow::before,
 section > .wrap > .sec-head > .eyebrow::before,
-section > .wrap > .grid > div > .eyebrow::before,
+section > .wrap.grid > div > .eyebrow::before,
 section > .wrap > .head-row > div > .eyebrow::before,
 section > .wrap > .card > div > .eyebrow::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);font-family:var(--display);font-size:1.15rem;letter-spacing:0;color:var(--ink);margin-right:1rem;font-weight:400;vertical-align:-.08em}
 
 /* ---------- about ---------- */
 .about{background:var(--ivory)}
-.about .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2.2rem,6vw,5rem);align-items:center}
-.about .photo{overflow:hidden;aspect-ratio:3/4}
+.about .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2.2rem,6vw,5rem);align-items:stretch}
+.about .photo{overflow:hidden;min-height:100%}
 .about .photo img{width:100%;height:100%;object-fit:cover;filter:saturate(.9)}
 .about .lead{margin-top:1.4rem}
 .pillars{display:grid;gap:0;margin-top:2.2rem}
@@ -158,10 +158,10 @@ section > .wrap > .card > div > .eyebrow::before{counter-increment:sec;content:c
 
 /* ---------- flota ---------- */
 .fleet{background:var(--ivory)}
-.fleet .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.fleet .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:stretch}
 .fleet h2{margin-top:1.2rem}
 .fleet p{color:var(--stone);margin-top:1.2rem;max-width:52ch}
-.fleet img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.fleet img{object-fit:cover;width:100%;height:100%;min-height:420px}
 .fleet dl{display:grid;grid-template-columns:1fr 1fr;gap:0 2.4rem;margin:2rem 0 0}
 .fleet dl > div{padding:1rem 0;border-top:1px solid var(--line-soft)}
 .fleet dt{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:600}
