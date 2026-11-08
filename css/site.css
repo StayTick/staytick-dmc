@@ -177,3 +177,6 @@ footer{background:var(--ivory);color:var(--stone);padding-block:3.5rem 2rem;bord
 [dir="rtl"] input[type="email"],[dir="rtl"] input[type="tel"]{text-align:right}
 [dir="rtl"] .rtl-flip{display:inline-block;transform:scaleX(-1)}
 [dir="rtl"] .stats b{direction:ltr;unicode-bidi:isolate}
+/* RTL: mapa en /ar/ (PR #7) - etiquetas SVG con fuente arabe, sin espejo; leyenda con el punto a la derecha del texto */
+[dir="rtl"] #map svg text{font-family:"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,sans-serif;unicode-bidi:plaintext}
+[dir="rtl"] #map span[aria-hidden="true"]{margin-right:0!important;margin-left:.5rem}
