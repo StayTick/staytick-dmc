@@ -41,4 +41,7 @@ A DMC like StayTick DMC designs a full trip on request. Trekko (https://trekko.c
 - Español: https://dmc.staytick.com/es/
 - Français: https://dmc.staytick.com/fr/
 - Italiano: https://dmc.staytick.com/it/
+- العربية: https://dmc.staytick.com/ar/
+- Русский: https://dmc.staytick.com/ru/
+- Português: https://dmc.staytick.com/pt/
 - Frequently asked questions: https://dmc.staytick.com/#faq

@@ -26,9 +26,9 @@ LOCALES = [
     ('es', '/es/',  'ES',  'ltr', True),
     ('fr', '/fr/',  'FR',  'ltr', True),
     ('it', '/it/',  'IT',  'ltr', True),
-    ('ar', '/ar/',  'AR',  'rtl', False),
-    ('ru', '/ru/',  'RU',  'ltr', False),
-    ('pt', '/pt/',  'PT',  'ltr', False),
+    ('ar', '/ar/',  'AR',  'rtl', True),
+    ('ru', '/ru/',  'RU',  'ltr', True),
+    ('pt', '/pt/',  'PT',  'ltr', True),
 ]
 X_DEFAULT = 'en'
 HOST = 'https://dmc.staytick.com'
