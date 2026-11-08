@@ -84,6 +84,37 @@ for f in $FILES; do
   fi
 done
 
+
+# --- Candado v2 (2026-11-08, dictamen cpo §4.1 + acta cmo §6.9) -------------
+# Se aplica SOLO a los locales ya migrados al diseño v2 (los que cargan
+# /css/v2.css). Los locales legacy (es/fr/it) aún contienen parte de esta clase
+# y se limpian cuando se reconstruyan sobre v2; entonces entran solos aquí.
+V2_FILES=$(grep -l '/css/v2.css' $FILES 2>/dev/null)
+V2_PATTERNS=(
+  'third[- ]part'                         # "no third parties" — falso (cpo §0)
+  'intermediar'                           # "no intermediaries" — falso
+  'in-house'                              # "todo in-house" — falso
+  'our (own )?(mercedes )?fleet'          # flota propia no probada
+  'operated directly'                     # "operado directamente en 41 paises"
+  '40\+ destinations'                    # cifra retirada (cmo §0.5)
+  'coming soon'                           # nunca en publico
+  'instant access'                        # alta automatica a netas — falso
+  'leader|award-winning|world-class'      # superlativos sin premio nombrado
+  '/img/(hero-venice|madrid|maldives|villa|villa-aerial|yacht|mercedes|balloons|como|milan|amalfi|garda|supercar|camper)\.jpg'  # fotos sin licencia registrada
+)
+if [ -n "$V2_FILES" ]; then
+  for p in "${V2_PATTERNS[@]}"; do
+    hits=$(grep -inE -- "$p" $V2_FILES 2>/dev/null)
+    if [ -n "$hits" ]; then
+      echo "FALLO (v2) — claim/activo vetado: /$p/"
+      echo "$hits" | sed 's/^/    /'
+      fail=1
+    fi
+  done
+  # Aviso (no bloquea) hasta que el CEO responda N12 sobre visados.
+  if grep -iqE '(^|[^a-z])visa([^a-z]|$)' $V2_FILES; then echo "AVISO (v2) — 'visa' presente: requiere N12 del CEO antes de publicar."; fi
+fi
+
 if [ "$fail" -ne 0 ]; then
   echo
   echo "check-claims: NO PUBLICAR. Ver INSPECCIONES/2026-09-19-comite-dmc-cto.md §4."
