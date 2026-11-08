@@ -64,6 +64,66 @@ PATTERNS=(
   'demande est partie'
   'richiesta . partita'
   "disabled = true"                       # botón bloqueado tras un envío no confirmado
+  # --- ampliación 2026-11-08 (fix/contenido-embudo, comité CMO/CPO + orden CEO) ---
+  'Powered by Trekko'                     # Trekko = marca hermana, no «powered by»
+  'con la tecnolog.a de Trekko'
+  'propuls. par Trekko'
+  'technology partner'                    # ídem (relato de marca CEO 08-nov)
+  'socio tecnol.gico'
+  'partenaire technologique'
+  'partner tecnologico'
+  'the platform behind'
+  'coming soon'                           # idiomas prometidos que no existen
+  'pr.ximamente'
+  'bient.t disponible'
+  'prossimamente'
+  '1M\+'                                  # cifra rancia: trekko.co publica 3M+
+  'one million'
+  'un mill.n'
+  'un million'
+  'un milione'
+  'no third parties'                      # falso: operamos con proveedores
+  'sin terceros'
+  'sans tiers'
+  'senza terzi'
+  'no intermediaries'
+  'sin intermediarios'
+  'sans interm.diaire'
+  'senza intermediari'
+  'Mercedes fleet'                        # flota propia no acreditada
+  'flota (propia|Mercedes)'
+  'flotte (Mercedes|propre)'
+  'flotta (Mercedes|propria)'
+  'in-house'                              # exclusividad «todo en casa» no acreditada
+  'en casa, con discreci'
+  'en interne'
+  'in casa, con discrezione'
+  'Cairo'                                 # orden CEO 08-nov: fuera El Cairo
+  'Le Caire'
+  'Il Cairo'
+  '\bArabic\b'                      # ni idioma árabe como servicio
+  '(^|[^[:alpha:]])(á|a|Á|A)rabe([^[:alpha:]]|$)'
+  '\barabo\b'
+  # 'Middle East' / 'Oriente Medio' / 'Moyen-Orient' / 'Medio Oriente': RETIRADOS del candado
+  # el 2026-11-08 por orden literal del CEO (D-2026-11-08-DMC-V2-CEO-AMPLIACION-Y-PUBLICAR:
+  # «trusted DMC & tour operator for leading brands in the US, Europe, the Middle East and Latin America»).
+  # Cairo / oficina en Oriente Medio / idioma árabe siguen PROHIBIDOS (arriba y abajo).
+  '#1\b'                                 # superlativo no demostrable (matiz coordinador, mismo D-)
+  'number one'
+  'n[uú]mero uno'
+  'numero uno'
+  'num[eé]ro un\b'
+  'n\.? ?º ?1\b'
+  'n° ?1\b'
+  '40\+'                                  # «40+ destinations» sin fuente
+  '300\+'                                 # «300+ villas» sin fuente vigente
+  'within 24'                             # SLA de respuesta no confirmado (N9)
+)
+
+# Términos prohibidos en el MARKETING pero obligatorios en las páginas legales
+# (LSSI art. 10: domicilio social real). Se aplican a todo salvo /legal/ y /privacy/.
+MARKETING_ONLY=(
+  'Albacete'                              # orden CEO 08-nov: fuera de la página comercial
 )
 
 fail=0
@@ -71,6 +131,16 @@ for p in "${PATTERNS[@]}"; do
   hits=$(grep -inE -- "$p" $FILES 2>/dev/null)
   if [ -n "$hits" ]; then
     echo "FALLO — claim retirado que ha vuelto: /$p/"
+    echo "$hits" | sed 's/^/    /'
+    fail=1
+  fi
+done
+
+MKT_FILES=$(echo "$FILES" | grep -vE '^\./(legal|privacy)/')
+for p in "${MARKETING_ONLY[@]}"; do
+  hits=$(grep -inE -- "$p" $MKT_FILES 2>/dev/null)
+  if [ -n "$hits" ]; then
+    echo "FALLO — término comercial prohibido: /$p/"
     echo "$hits" | sed 's/^/    /'
     fail=1
   fi
