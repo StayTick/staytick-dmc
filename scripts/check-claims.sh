@@ -54,7 +54,8 @@ PATTERNS=(
   'gruppo Trekko'
   'parentOrganization'                    # el mismo claim, legible por máquina
   'makesOffer'                            # ofertas estructuradas sin acreditar
-  'WhatsApp'                              # canal no confirmado como atendido
+  # 'WhatsApp': RETIRADO del candado el 2026-11-08 por orden del CEO (D-2026-11-08-DMC-WHATSAPP-DIARIO:
+  # «Todos los días en WhatsApp, en email, rápido»). Siguen prohibidos los plazos de respuesta ('within 24', '24/7'…).
   '24/7'                                  # contradice el horario 9:00–22:00 acreditado
   '24h/24'
   '24 ore su 24'
