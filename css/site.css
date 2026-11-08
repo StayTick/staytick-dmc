@@ -176,3 +176,4 @@ footer{background:var(--ivory);color:var(--stone);padding-block:3.5rem 2rem;bord
 [dir="rtl"] input[type="email"],[dir="rtl"] input[type="tel"],[dir="rtl"] a[href^="tel:"],[dir="rtl"] a[href^="mailto:"]{direction:ltr;unicode-bidi:isolate}
 [dir="rtl"] input[type="email"],[dir="rtl"] input[type="tel"]{text-align:right}
 [dir="rtl"] .rtl-flip{display:inline-block;transform:scaleX(-1)}
+[dir="rtl"] .stats b{direction:ltr;unicode-bidi:isolate}
