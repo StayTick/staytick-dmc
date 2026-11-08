@@ -104,10 +104,17 @@ PATTERNS=(
   '\bArabic\b'                      # ni idioma árabe como servicio
   '(^|[^[:alpha:]])(á|a|Á|A)rabe([^[:alpha:]]|$)'
   '\barabo\b'
-  'Middle East'
-  'Oriente Medio'
-  'Moyen-Orient'
-  'Medio Oriente'
+  # 'Middle East' / 'Oriente Medio' / 'Moyen-Orient' / 'Medio Oriente': RETIRADOS del candado
+  # el 2026-11-08 por orden literal del CEO (D-2026-11-08-DMC-V2-CEO-AMPLIACION-Y-PUBLICAR:
+  # «trusted DMC & tour operator for leading brands in the US, Europe, the Middle East and Latin America»).
+  # Cairo / oficina en Oriente Medio / idioma árabe siguen PROHIBIDOS (arriba y abajo).
+  '#1\b'                                 # superlativo no demostrable (matiz coordinador, mismo D-)
+  'number one'
+  'n[uú]mero uno'
+  'numero uno'
+  'num[eé]ro un\b'
+  'n\.? ?º ?1\b'
+  'n° ?1\b'
   '40\+'                                  # «40+ destinations» sin fuente
   '300\+'                                 # «300+ villas» sin fuente vigente
   'within 24'                             # SLA de respuesta no confirmado (N9)
