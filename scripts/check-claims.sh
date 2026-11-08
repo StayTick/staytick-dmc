@@ -14,7 +14,7 @@ set -u
 
 cd "$(dirname "$0")/.." || exit 2
 
-FILES=$(find . -name index.html -not -path "./.git/*" | sort)
+FILES=$( (find . -name index.html -not -path "./.git/*"; ls ./llms.txt 2>/dev/null) | sort)
 if [ -z "$FILES" ]; then
   echo "check-claims: no se encontró ningún index.html" >&2
   exit 2
@@ -118,6 +118,13 @@ PATTERNS=(
   '40\+'                                  # «40+ destinations» sin fuente
   '300\+'                                 # «300+ villas» sin fuente vigente
   'within 24'                             # SLA de respuesta no confirmado (N9)
+  # --- v3 AEO 2026-11-08 (D-2026-11-08-DMC-V3-CEO-CLARIDAD-AEO): superlativos indemostrables ---
+  'the best'
+  'best DMC'
+  'best tour operator'
+  'el mejor (DMC|turoperador)'
+  'le meilleur (DMC|tour-op)'
+  'il miglior(e)? (DMC|tour operator)'
 )
 
 # Términos prohibidos en el MARKETING pero obligatorios en las páginas legales
