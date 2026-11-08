@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-dmc-design="v3-airbnb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>StayTick DMC — proposal Airbnb style</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23FFFFFF'/%3E%3Ctext x='32' y='43' font-family='Helvetica,Arial,sans-serif' font-weight='700' font-size='34' fill='%23F60C75' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap">
+<style>
+:root{--font:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text",Inter,"Helvetica Neue",Arial,sans-serif;--magenta:#DB0A69;--brand:#F60C75;--gutter:16px;--maxw:1240px;--header-h:72px}
+@media (min-width:640px){:root{--gutter:clamp(24px,4vw,48px);--header-h:76px}}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 8px);-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font);font-size:1rem;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:clip}
+em,i{font-style:normal} button,input{font-family:inherit}
+img{display:block;max-width:100%;height:auto} a{color:inherit} p{margin:0}
+h1,h2,h3{margin:0;text-wrap:balance}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.sr-only{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;inset-inline-start:var(--gutter);inset-block-start:-100px;z-index:100;background:#000;color:#fff;padding:.7rem 1rem}
+.skip:focus{inset-block-start:8px}
+.ico{width:26px;height:26px;flex:none;stroke:currentColor;fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.go .ico{width:18px;height:18px;transition:transform .2s}
+.card:hover .go .ico{transform:translateX(3px)}
+[dir="rtl"] .go .ico{transform:scaleX(-1)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:52px;padding:.85rem 1.5rem;border:0;font-weight:600;font-size:1rem;line-height:1.2;text-decoration:none;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s}
+.btn:active{transform:scale(.98)}
+.hdr{position:sticky;inset-block-start:0;z-index:60}
+.hdr .wrap{display:flex;align-items:center;gap:1rem;height:var(--header-h)}
+.brand{display:flex;flex:none} .brand img{height:36px;width:auto}
+.nav-main{display:none;margin-inline-start:auto}
+.nav-main ul{display:flex;gap:.25rem;list-style:none;margin:0;padding:0}
+.nav-main a{display:block;padding:.55rem .8rem;font-size:.95rem;font-weight:500;text-decoration:none;white-space:nowrap}
+.hdr-ctas{display:flex;align-items:center;gap:.5rem;margin-inline-start:auto}
+.hdr-ctas .btn{min-height:44px;padding:.5rem 1.1rem;font-size:1rem;white-space:nowrap}
+.hdr-rfp,.full{display:none}
+.burger{display:inline-grid;place-items:center;width:44px;height:44px;border:0;background:transparent;color:inherit;cursor:pointer}
+.burger span{display:block;width:20px;height:2px;background:currentColor;position:relative}
+.burger span::before,.burger span::after{content:"";position:absolute;inset-inline-start:0;width:20px;height:2px;background:currentColor}
+.burger span::before{top:-6px} .burger span::after{top:6px}
+.mnav{position:fixed;inset:var(--header-h) 0 0 0;z-index:55;overflow-y:auto;padding:1rem var(--gutter) 2rem;display:flex;flex-direction:column;gap:.9rem}
+.mnav[hidden]{display:none}
+.mnav ul{list-style:none;margin:0;padding:0}
+.mnav li a{display:block;padding:.9rem 0;font-size:1.35rem;font-weight:600;text-decoration:none}
+.mnav .btn{width:100%}
+body.menu-open{overflow:hidden}
+@media (min-width:720px){.hdr-rfp{display:inline-flex}.full{display:inline}.short{display:none}}
+@media (min-width:1100px){.nav-main{display:block}.hdr-ctas{margin-inline-start:.5rem}.burger{display:none}.mnav{display:none!important}}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.75rem}
+@media (max-width:639px){.hero-ctas .btn{width:100%}}
+.slot{position:relative;overflow:hidden}
+.slot-tag{position:absolute;inset-block-start:12px;inset-inline-start:12px;max-width:calc(100% - 24px);font-size:.72rem;font-weight:600;line-height:1.35;padding:.3rem .6rem}
+.cards{display:grid;gap:1.25rem}
+.card{display:flex;flex-direction:column;text-decoration:none;color:inherit;overflow:hidden}
+.card .body{display:flex;flex-direction:column;gap:.55rem;flex:1}
+.go{margin-block-start:auto;display:inline-flex;align-items:center;gap:.4rem;font-weight:600;font-size:.95rem;padding-block-start:.4rem}
+.pills{display:flex;gap:.5rem;list-style:none;margin:0;padding:0;overflow-x:auto;scrollbar-width:none}
+.card .q{color:#717171!important;font-size:.95rem}
+.honest{list-style:none;margin:0 0 1.6rem;padding:0;display:grid;gap:.9rem}
+.honest li{font-size:clamp(1.2rem,1rem + .8vw,1.6rem);font-weight:600;letter-spacing:-.015em;line-height:1.3}
+.banner-ctas{display:flex;flex-wrap:wrap;gap:1rem 1.5rem;align-items:center}
+.blink{font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.note a{text-decoration:underline;text-underline-offset:3px}
+.pills::-webkit-scrollbar{display:none} .pills li{flex:none}
+.pills a{display:inline-flex;align-items:center;min-height:42px;padding:.5rem 1rem;font-size:.92rem;font-weight:500;text-decoration:none;white-space:nowrap}
+
+body{background:#fff;color:#222}
+.hdr{background:#fff;border-block-end:1px solid #EBEBEB}
+.nav-main a{color:#222;border-radius:999px}.nav-main a:hover{background:#F7F7F7}
+.btn{border-radius:12px}
+.b1{background:var(--magenta);color:#fff}.b1:hover{background:#BE085B}
+.b2{background:#222;color:#fff}.b2:hover{background:#000}
+.mnav{background:#fff}.mnav li a{border-block-end:1px solid #EBEBEB}
+.hero{padding-block:clamp(2rem,1.5rem + 3vw,4.5rem) clamp(3rem,2rem + 3vw,5rem)}
+.hero-grid{display:grid;gap:2.2rem;align-items:center}
+@media(min-width:1000px){.hero-grid{grid-template-columns:1fr 1fr;gap:3.5rem}}
+.kicker{display:inline-block;font-size:.88rem;font-weight:600;color:#6A6A6A;margin-block-end:1rem}
+h1{font-size:clamp(2.6rem,1.4rem + 4.6vw,4.6rem);font-weight:700;letter-spacing:-.03em;line-height:1.04}
+h2{font-size:clamp(1.9rem,1.3rem + 2.2vw,3rem);font-weight:700;letter-spacing:-.022em;line-height:1.1}
+h3{font-size:1.15rem;font-weight:600;letter-spacing:-.01em}
+.lead{font-size:clamp(1.05rem,1rem + .3vw,1.2rem);color:#6A6A6A;max-width:56ch;margin-block-start:1.2rem}
+.hero-ctas{margin-block-start:2rem}
+.note{margin-block-start:1rem;color:#6A6A6A;font-size:.92rem}
+.hero-media{aspect-ratio:4/5;border-radius:24px;background:linear-gradient(160deg,#F3E7DF 0%,#D9C2B3 100%);box-shadow:0 6px 24px rgba(0,0,0,.08)}
+@media(max-width:999px){.hero-media{aspect-ratio:4/3}}
+.slot-tag{background:#fff;color:#222;border-radius:999px;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.sec{padding-block:clamp(3.5rem,2.5rem + 4vw,6.5rem)}
+.what{background:#F7F7F7}
+.what-grid{display:grid;gap:1.8rem}@media(min-width:1000px){.what-grid{grid-template-columns:1fr 1.1fr;gap:4rem}}
+.what .lead{margin:0}
+.pull{margin-block-start:1.6rem;display:inline-block;background:#fff;border-radius:16px;padding:1rem 1.2rem;box-shadow:0 2px 12px rgba(0,0,0,.06);font-weight:600;font-size:1.15rem}
+.head{margin-block-end:2rem;max-width:720px}
+.cards.c3{grid-template-columns:1fr}@media(min-width:760px){.cards.c3{grid-template-columns:repeat(3,1fr)}}
+.cards.c2{grid-template-columns:1fr}@media(min-width:760px){.cards.c2{grid-template-columns:repeat(2,1fr)}}
+.card{gap:.9rem;transition:transform .25s}
+.card:hover{transform:translateY(-2px)}
+.card .slot{aspect-ratio:1/1;border-radius:20px;background:linear-gradient(160deg,#EFE3DA 0%,#CDB6A6 100%)}
+.card.seg .slot{aspect-ratio:3/2;background:linear-gradient(160deg,#E7E3EE 0%,#BFB6CF 100%)}
+.card:hover .slot{box-shadow:0 8px 28px rgba(0,0,0,.14)}
+.card .body{padding:0 .2rem}
+.card .body>.ico{display:none}
+.card p{color:#6A6A6A;font-size:.96rem}
+.go{color:#222;text-decoration:underline;text-underline-offset:3px}
+.segments .pills{margin-block-end:1.8rem;border-block-end:1px solid #EBEBEB;padding-block-end:1rem}
+.segments .pills a{border:1px solid #DDDDDD;border-radius:999px;background:#fff;color:#222}
+.segments .pills a:hover{border-color:#222}
+.segments .pills a[aria-current]{background:#222;color:#fff;border-color:#222}
+.banner{padding-block:clamp(1.5rem,1rem + 2vw,3rem)}
+.banner-grid{display:grid;gap:1.4rem;align-items:center;background:#222;color:#fff;border-radius:24px;padding:clamp(1.6rem,1.2rem + 2vw,3rem)}
+@media(min-width:900px){.banner-grid{grid-template-columns:1fr auto}}
+.banner .kicker{color:#FF8FBF}.banner p{color:#ccc;margin-block-start:.6rem}
+.b-banner{background:var(--magenta);color:#fff}.b-banner:hover{background:#BE085B}
+.ftr{background:#F7F7F7;border-block-start:1px solid #EBEBEB;padding-block:3rem 2rem;color:#6A6A6A;font-size:.92rem}
+.ftr-grid{display:grid;gap:1.5rem}@media(min-width:900px){.ftr-grid{grid-template-columns:repeat(3,1fr)}}
+.ftr b{display:block;color:#222;margin-block-end:.4rem}.ftr p{margin-block-end:.3rem}
+.flogo{height:32px;width:auto;margin-block-end:.6rem}
+.fine{margin-block-start:2rem;font-size:.8rem}
+.ph{border:1px dashed #B0B0B0;padding:0 .3rem;border-radius:6px;font-size:.85em}
+:focus-visible{outline:2px solid #222;outline-offset:3px;border-radius:8px}
+
+</style>
+</head>
+<body class="v-airbnb">
+<a class="skip" href="#main">Skip to content</a>
+<header class="hdr">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="StayTick DMC — home"><img src="/img/staytick-logo.png" alt="StayTick DMC" width="620" height="211"></a>
+    <nav class="nav-main" aria-label="Main"><ul><li><a href="#services">Services</a></li><li><a href="#segments">Who we serve</a></li><li><a href="#what">How it works</a></li><li><a href="#trekko">Trekko</a></li></ul></nav>
+    <div class="hdr-ctas">
+      <a class="btn b1 hdr-rfp" href="#proposal">Get a proposal</a>
+      <a class="btn b2" href="https://trekko.co/signup?from=en&amp;utm_source=dmc&amp;utm_medium=referral&amp;utm_campaign=dmc-v3-airbnb" rel="noopener">Join Trekko</a>
+      <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="mnav"><span aria-hidden="true"></span><span class="sr-only">Menu</span></button>
+    </div>
+  </div>
+</header>
+<nav class="mnav" id="mnav" aria-label="Mobile" hidden>
+  <ul><li><a href="#services">Services</a></li><li><a href="#segments">Who we serve</a></li><li><a href="#what">How it works</a></li><li><a href="#trekko">Trekko</a></li><li><a href="#proposal">Contact</a></li></ul>
+  <a class="btn b1" href="#proposal">Get a proposal</a>
+  <a class="btn b2" href="https://trekko.co/signup?from=en&amp;utm_source=dmc&amp;utm_medium=referral&amp;utm_campaign=dmc-v3-airbnb" rel="noopener">Join Trekko</a>
+</nav>
+<main id="main">
+<section class="hero" id="top" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="kicker">StayTick DMC · Spain · Italy · Europe · USA · Japan</span>
+      <h1 id="h1">The trips booking engines can't handle.</h1>
+      <p class="lead">Groups, events, honeymoons, multi-country tours, villas and VIP arrivals. You send the brief. We design it, price it and run it.</p>
+      <div class="hero-ctas"><a class="btn b1" href="#proposal">Get a proposal</a><a class="btn b2" href="https://trekko.co/signup?from=en&amp;utm_source=dmc&amp;utm_medium=referral&amp;utm_campaign=dmc-v3-airbnb" rel="noopener">Join Trekko</a></div>
+      <p class="note"><a href="https://trekko.co/signup?from=en&amp;utm_source=dmc&amp;utm_medium=referral&amp;utm_campaign=dmc-v3-airbnb" rel="noopener">Just need a hotel, fast? Book it on Trekko →</a></p>
+    </div>
+    <div class="hero-media slot" aria-hidden="true"></div>
+  </div>
+</section>
+
+<section class="sec what" id="what" aria-labelledby="h-what">
+  <div class="wrap what-grid">
+    <div><span class="kicker">Let's be honest</span><h2 id="h-what">Some trips don't fit in a search box.</h2></div>
+    <div>
+      <ul class="honest"><li>Forty students, three countries, one teacher who wants a vegetarian menu.</li><li>A board meeting in Madrid that becomes a dinner for eighty.</li><li>A honeymoon where "standard room" is not an option.</li></ul>
+      <p class="lead">The sector's answer is usually "on request". Ours is a proposal.</p>
+      <p class="pull">Clickable? Book it on Trekko. Not clickable? That's our job.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec services" id="services" aria-labelledby="h-svc">
+  <div class="wrap">
+    <div class="head"><span class="kicker">What we do</span><h2 id="h-svc">One team. Every piece of the trip.</h2><p class="lead">Package or service by service. Net pricing for the trade.</p></div>
+    <div class="cards c3">
+      <a class="card svc" href="#proposal" data-trip="Group">
+        <div class="slot" aria-hidden="true"></div>
+        <div class="body"><h3>Groups</h3><p class="q">"Groups? Please fill in this 6-page form."</p><p>Tell us the dates and the headcount. We bring coaches, guides, hotels and tickets in one programme.</p><span class="go">Get a proposal <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </a>
+      <a class="card svc" href="#proposal" data-trip="Multi-destination package">
+        <div class="slot" aria-hidden="true"></div>
+        <div class="body"><h3>Multi-country tours</h3><p class="q">"Three countries, three suppliers, three invoices."</p><p>One itinerary. One quote. One team, from Italy to the Adriatic to Spain.</p><span class="go">Get a proposal <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </a>
+      <a class="card svc" href="#proposal" data-trip="Honeymoon or luxury">
+        <div class="slot" aria-hidden="true"></div>
+        <div class="body"><h3>Honeymoons &amp; luxury</h3><p class="q">"Romantic package: rose petals included."</p><p>Private itineraries with hand-picked hotels, chauffeurs and experiences. No petals unless you ask.</p><span class="go">Get a proposal <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="sec segments" id="segments" aria-labelledby="h-seg">
+  <div class="wrap">
+    <div class="head"><span class="kicker">Who we serve</span><h2 id="h-seg">Built for people who sell travel.</h2></div>
+    <ul class="pills" aria-label="Who we serve"><li><a href="#segments" aria-current="true">Travel agencies</a></li><li><a href="#segments">Tour operators</a></li><li><a href="#segments">Corporate &amp; MICE</a></li><li><a href="#segments">School &amp; university groups</a></li><li><a href="#segments">Senior groups</a></li><li><a href="#segments">Honeymoons &amp; luxury</a></li><li><a href="#segments">Families</a></li></ul>
+    <div class="cards c2">
+      <a class="card seg" href="#proposal" data-trip="School or university">
+        <div class="slot" aria-hidden="true"></div>
+        <div class="body"><h3>School &amp; university groups</h3><p class="q">"Students: the word that makes suppliers go quiet."</p><p>Educational and sports trips with coaches, guides, tickets and logistics students and teachers can rely on.</p><span class="go">Plan a group trip <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </a>
+      <a class="card seg" href="#proposal" data-trip="Event or MICE">
+        <div class="slot" aria-hidden="true"></div>
+        <div class="body"><h3>Corporate &amp; MICE</h3><p class="q">"Forty emails to move one delegation."</p><p>One brief, one proposal, one team on the ground.</p><span class="go">Plan an event <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="banner" id="trekko" aria-labelledby="h-tk">
+  <div class="wrap banner-grid">
+    <div>
+      <span class="kicker">Two ways to book</span>
+      <h2 id="h-tk">Tailor-made, or right now?</h2>
+      <p>Trekko is our sister brand: a bed bank for travel agencies. Over 3 million hotels, plus transfers, chauffeurs and car rental, at net rates with instant confirmation.</p>
+    </div>
+    <div class="banner-ctas"><a class="btn b-banner" href="https://trekko.co/signup?from=en&amp;utm_source=dmc&amp;utm_medium=referral&amp;utm_campaign=dmc-v3-airbnb" rel="noopener">Join Trekko <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="blink" href="#proposal">Or get a proposal from us</a></div>
+  </div>
+</section>
+</main>
+
+<footer class="ftr" id="proposal">
+  <div class="wrap ftr-grid">
+    <div><img class="flogo" src="/img/staytick-logo.png" alt="StayTick DMC" width="620" height="211" loading="lazy"><p>Tailor-made travel for the trade. Based in Madrid, with offices across Europe.</p></div>
+    <div><b>Get a proposal</b><p><a href="tel:+34643195384">+34 643 19 53 84</a></p><p>Every day, 9:00–22:00 CET. Yes, Sundays too.</p></div>
+    <div><b>Trekko</b><p><a href="https://trekko.co/signup?from=en&amp;utm_source=dmc&amp;utm_medium=referral&amp;utm_campaign=dmc-v3-airbnb" rel="noopener">Join Trekko</a></p><p class="langs"><a href="/" lang="en">English</a> · <a href="/es/" lang="es" hreflang="es">Español</a></p></div>
+  </div>
+  <div class="wrap fine">© <span id="yr">2026</span> StayTick DMC · Trekko is our sister brand · Proposal Airbnb style, not published</div>
+</footer>
+<script>
+(function(){var d=document;d.getElementById('yr').textContent=new Date().getFullYear();
+var b=d.getElementById('burger'),m=d.getElementById('mnav');
+function s(o){b.setAttribute('aria-expanded',o?'true':'false');m.hidden=!o;d.body.classList.toggle('menu-open',o);}
+b.addEventListener('click',function(){s(b.getAttribute('aria-expanded')!=='true');});
+m.addEventListener('click',function(e){if(e.target.closest('a'))s(false);});
+d.addEventListener('keydown',function(e){if(e.key==='Escape'&&b.getAttribute('aria-expanded')==='true'){s(false);b.focus();}});})();
+</script>
+</body>
+</html>

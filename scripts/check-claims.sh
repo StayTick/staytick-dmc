@@ -89,7 +89,7 @@ done
 # Se aplica SOLO a los locales ya migrados al diseño v2 (los que cargan
 # /css/v2.css). Los locales legacy (es/fr/it) aún contienen parte de esta clase
 # y se limpian cuando se reconstruyan sobre v2; entonces entran solos aquí.
-V2_FILES=$(grep -l '/css/v2.css' $FILES 2>/dev/null)
+V2_FILES=$(grep -lE '/css/v2.css|data-dmc-design=' $FILES 2>/dev/null)
 V2_PATTERNS=(
   'third[- ]part'                         # "no third parties" — falso (cpo §0)
   'intermediar'                           # "no intermediaries" — falso
@@ -98,6 +98,11 @@ V2_PATTERNS=(
   'operated directly'                     # "operado directamente en 41 paises"
   '40\+ destinations'                    # cifra retirada (cmo §0.5)
   'coming soon'                           # nunca en publico
+  'Cairo|Albacete|Arabic'                 # orden CEO 08-nov: imagen Madrid + offices across Europe
+  'technology partner'                    # orden CEO 08-nov: Trekko = sister brand, the bed bank
+  'Trekko group'                          # claim societario (Regla #1)
+  'South America'                         # reparo CTO R5
+  'Photo pending'                         # reparo CTO R2: sin etiquetas visibles en huecos de foto
   'instant access'                        # alta automatica a netas — falso
   'leader|award-winning|world-class'      # superlativos sin premio nombrado
   '/img/(hero-venice|madrid|maldives|villa|villa-aerial|yacht|mercedes|balloons|como|milan|amalfi|garda|supercar|camper)\.jpg'  # fotos sin licencia registrada
