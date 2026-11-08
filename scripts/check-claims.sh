@@ -126,6 +126,23 @@ PATTERNS=(
   'el mejor (DMC|turoperador)'
   'le meilleur (DMC|tour-op)'
   'il miglior(e)? (DMC|tour operator)'
+  # --- AR/RU/PT (2026-11-08, D-2026-11-08-DMC-IDIOMAS-AR-RU-PT-RANKING, gate cmo) ---
+  'القاهرة'                               # El Cairo (AR)
+  'رقم ?(1|١|واحد)'                       # «número 1» (AR)
+  'أفضل'                                  # «el mejor» (AR) — superlativo vetado
+  'الأفضل'
+  'قريبا|قريبًا'                          # «coming soon» (AR)
+  'باللغة العربية|نتحدث العربية|ناطق(ين)? بالعربية|سائق عربي|فريق عربي'   # no se ofrece atención en árabe
+  'Каир'                                  # El Cairo (RU)
+  'арабск|на арабском|арабоговорящ'       # árabe como idioma (RU)
+  '№ ?1'                                  # «número 1» (RU)
+  'номер один'
+  'лучш'                                  # «el mejor» (RU)
+  'скоро'                                 # «coming soon» (RU)
+  'melhor'                                # «el mejor» (PT)
+  'em breve'                              # «coming soon» (PT)
+  'sem intermedi'                         # (PT)
+  'frota pr.pria'                         # (PT)
 )
 
 # Términos prohibidos en el MARKETING pero obligatorios en las páginas legales
