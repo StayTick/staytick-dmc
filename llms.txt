@@ -1,6 +1,6 @@
 # StayTick DMC
 
-> StayTick DMC is a tour operator and DMC (destination management company) based in Madrid, Spain. We plan and run trips for travel agencies, tour operators, OTAs and companies. Legal entity: STAYTICK TRAVEL SL.
+> StayTick DMC is a tour operator and DMC (destination management company) for Europe, the Americas and Japan, based in Madrid, Spain. We plan and run trips for travel agencies, tour operators, OTAs and companies. Legal entity: STAYTICK TRAVEL SL.
 
 ## What we do
 - Groups and coach tours (students, universities, seniors)
@@ -16,10 +16,16 @@
 Travel agencies; tour operators and OTAs; corporate travel departments; SaaS and technology companies (offsites, incentives, client events); event and incentive agencies; schools and universities; DMC partners abroad.
 
 ## Destinations
-Spain (Madrid, Barcelona, Andalusia, the islands), Italy (from the lakes and Venice to Tuscany, Rome, the Amalfi Coast and Sicily), multi-country Europe, the United States and Japan (Tokyo, Kyoto and Osaka, with trusted local partners).
+- Spain: Madrid, Barcelona, Andalusia and the islands
+- Italy: from the lakes and Venice to Tuscany, Rome, the Amalfi Coast and Sicily
+- Europe, multi-country: Portugal, France, the UK and Ireland, Central Europe (Germany, Austria, Czechia), Switzerland, the Netherlands and Belgium, the Adriatic (Croatia), Greece and the Nordic countries
+- United States and Canada (Canada with trusted local partners)
+- Mexico and the Caribbean, with trusted local partners
+- South America: Brazil, Argentina, Chile, Peru and Colombia, with trusted local partners
+- Japan: Tokyo, Kyoto and Osaka, with trusted local partners
 
 ## Markets
-We work with companies and travel brands in the United States, Brazil, Mexico, the United Kingdom and the Gulf.
+We work with companies and travel brands in the United States, Canada, Brazil, Mexico, the United Kingdom, Europe and the Gulf.
 
 ## StayTick DMC and Trekko
 A DMC like StayTick DMC designs a full trip on request. Trekko (https://trekko.co), our sister brand, is a bed bank where travel agencies book hotels (3M+ properties), transfers and car rental online themselves at net prices. Use Trekko for simple bookings and StayTick DMC for anything that needs planning.

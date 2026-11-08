@@ -163,3 +163,16 @@ footer{background:var(--ivory);color:var(--stone);padding-block:3.5rem 2rem;bord
   .trekko .card{padding:1.4rem}
   .offices{gap:1rem 1.6rem}
 }
+/* ===== RTL (ar) - infraestructura preparada 2026-11-08 (D-2026-11-08-DMC-IDIOMAS-AR-RU-PT-RANKING). Se activa con <html lang="ar" dir="rtl">. ===== */
+/* Grid y flex se espejan solos con dir=rtl; aqui solo lo que va con left/right fijo, tipografia y lo que NO debe espejarse. */
+[dir="rtl"] body{font-family:"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,var(--body)}
+[dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3{font-family:"Noto Sans Arabic","Segoe UI","Geeza Pro",Tahoma,var(--display);letter-spacing:0}
+[dir="rtl"] .eyebrow,[dir="rtl"] .stats span,[dir="rtl"] .nav ul,[dir="rtl"] label,[dir="rtl"] .langs,[dir="rtl"] .foot h4,[dir="rtl"] .contact b,[dir="rtl"] .offices b,[dir="rtl"] .fleet dt,[dir="rtl"] .btn{letter-spacing:0;text-transform:none}
+[dir="rtl"] .brand small{padding-left:0;border-left:0;padding-right:.7rem;border-right:1px solid var(--line)}
+[dir="rtl"] .hero::after{background:linear-gradient(270deg,rgba(255,255,255,.97) 0%,rgba(255,255,255,.9) 45%,rgba(255,255,255,.35) 100%)}
+[dir="rtl"] .svc.text ul,[dir="rtl"] .route ul{padding-left:0;padding-right:1.1rem}
+[dir="rtl"] .region ul li::before,[dir="rtl"] .signup ul.perks li::before{margin-right:0;margin-left:.5rem}
+[dir="rtl"] #map svg{direction:ltr}
+[dir="rtl"] input[type="email"],[dir="rtl"] input[type="tel"],[dir="rtl"] a[href^="tel:"],[dir="rtl"] a[href^="mailto:"]{direction:ltr;unicode-bidi:isolate}
+[dir="rtl"] input[type="email"],[dir="rtl"] input[type="tel"]{text-align:right}
+[dir="rtl"] .rtl-flip{display:inline-block;transform:scaleX(-1)}
