@@ -140,3 +140,23 @@ footer{background:var(--ivory);color:var(--stone);padding-block:3.5rem 2rem;bord
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
 /* estado de error honesto del formulario (fix/contenido-embudo) */
 .ok.err{background:#B3261E}.ok a{color:inherit}
+
+/* mobile fixes 2026-11-08 (CEO: "no es mobile friendly") */
+@media(max-width:900px){
+  .about .grid{grid-template-columns:1fr}
+  .about .photo{aspect-ratio:16/10;max-width:100%}
+  .svc:not(.text){aspect-ratio:auto;min-height:18rem}
+  .svc:not(.text)::before{background:linear-gradient(180deg,rgba(14,27,43,.28) 0%,rgba(14,27,43,.78) 40%,rgba(14,27,43,.97) 100%)}
+  .svc h3{text-shadow:0 1px 3px rgba(0,0,0,.5)} .svc p{color:rgba(246,242,234,.95)}
+}
+@media(max-width:560px){
+  .stats{gap:1.1rem 1.6rem;justify-content:space-between}
+  .stats>div{flex:1 1 30%}
+  .stats b{font-size:1.75rem}
+  .stats span{font-size:.66rem;letter-spacing:.1em}
+  .fleet dl{grid-template-columns:1fr;gap:.9rem}
+  #map svg text{font-size:10px;font-weight:700;paint-order:stroke;stroke:#fff;stroke-width:2.5px;stroke-linejoin:round}
+  #map svg circle{r:3.2}
+  .trekko .card{padding:1.4rem}
+  .offices{gap:1rem 1.6rem}
+}
